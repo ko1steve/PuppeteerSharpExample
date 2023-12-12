@@ -18,6 +18,7 @@ namespace PuppeteerSharpExample
             return (isSuccess ? 0 : 1);
         }
 
+        //* 取得要轉成 PDF 的目標網頁 URL
         static string GetTargetUrl() {
             bool inputUrl = Boolean.Parse(ConfigurationManager.AppSettings["INPUT_URL_FROM_CONSOLE"]);
             if (inputUrl)
@@ -28,6 +29,7 @@ namespace PuppeteerSharpExample
             return ConfigurationManager.AppSettings["TARGET_URL"];
         }
 
+        //* 將網頁轉成 PDF
         static async Task<bool> CovertHtmlToPdf(string url)
         {
             var launchOptions = new LaunchOptions
